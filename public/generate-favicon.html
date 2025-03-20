@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generate Favicon</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #3730a3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .output {
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 100%;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Taylor Labs Favicon Generator</h1>
+        <p>This utility will convert the SVG favicon to PNG for browsers that don't support SVG favicons.</p>
+
+        <img id="svgPreview" src="favicon.svg" width="64" height="64" alt="SVG Favicon">
+
+        <button id="generatePng">Generate PNG Favicon</button>
+
+        <div class="output">
+            <p>Generated PNGs will appear here...</p>
+            <div id="pngOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generatePng').addEventListener('click', function () {
+            const sizes = [16, 32, 48, 64, 128, 192, 512];
+            const outputDiv = document.getElementById('pngOutput');
+            outputDiv.innerHTML = '';
+
+            sizes.forEach(size => {
+                // Create a canvas element
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+
+                // Create an image element
+                const img = new Image();
+                img.src = 'favicon.svg';
+
+                img.onload = function () {
+                    // Draw the SVG to canvas
+                    ctx.drawImage(img, 0, 0, size, size);
+
+                    // Convert to PNG
+                    const pngDataUrl = canvas.toDataURL('image/png');
+
+                    // Display the result
+                    const container = document.createElement('div');
+                    container.style.margin = '10px 0';
+
+                    const pngImg = document.createElement('img');
+                    pngImg.src = pngDataUrl;
+                    pngImg.width = size;
+                    pngImg.height = size;
+
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = pngDataUrl;
+                    downloadLink.download = `favicon-${size}x${size}.png`;
+                    downloadLink.textContent = `Download ${size}x${size}`;
+                    downloadLink.style.marginLeft = '10px';
+
+                    container.appendChild(pngImg);
+                    container.appendChild(downloadLink);
+                    outputDiv.appendChild(container);
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>
