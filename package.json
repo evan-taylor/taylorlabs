@@ -4,12 +4,13 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:server": "node dev-server.js",
-    "build": "vite build",
+    "dev": "node scripts/generate-sitemap.js && vite",
+    "dev:server": "node scripts/generate-sitemap.js && node dev-server.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "build": "npm run generate-sitemap && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node server.js"
+    "start": "node scripts/generate-sitemap.js && node server.js"
   },
   "dependencies": {
     "express": "^5.1.0",
