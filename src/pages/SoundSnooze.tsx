@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2, VolumeX, Moon, Power, Headphones, Check, ArrowRight, Download } from 'lucide-react';
 
@@ -31,6 +31,11 @@ const faqItems = [
 ];
 
 function SoundSnooze() {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
       {/* Hero Section */}
@@ -85,10 +90,10 @@ function SoundSnooze() {
             href="/downloads/SoundSnooze.dmg"
             className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center"
           >
-            Download Free <Download className="ml-2 w-5 h-5" />
+            Download for Free <Download className="ml-2 w-5 h-5" />
           </a>
           <a
-            href="https://buy.stripe.com/test_dR67vfdRe0Rj7mwcMO"
+            href="https://buymeacoffee.com/evan.taylor"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center"
@@ -222,9 +227,13 @@ function SoundSnooze() {
 
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 text-center text-gray-400">
-        <p>© {new Date().getFullYear()} Taylor Labs. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Taylor Labs, LLC. All rights reserved.</p>
         <p className="mt-2">
           SoundSnooze is provided as-is without any warranty. If you enjoy using it, consider supporting us with a donation.
+        </p>
+        <p className="mt-2">
+          2261 Market Street #86329<br />
+          San Francisco, CA 94114
         </p>
       </footer>
     </div>
