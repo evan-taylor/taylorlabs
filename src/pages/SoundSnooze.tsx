@@ -87,7 +87,7 @@ function SoundSnooze() {
           className="flex flex-col sm:flex-row justify-center gap-4 mt-8"
         >
           <a
-            href="/downloads/SoundSnooze.dmg"
+            href="https://github.com/evan-taylor/SoundSnooze/releases/download/v1.0/SoundSnooze.dmg"
             className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center"
           >
             Download for Free <Download className="ml-2 w-5 h-5" />
