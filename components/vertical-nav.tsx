@@ -9,6 +9,18 @@ const VerticalNav = () => {
   const [activeSection, setActiveSection] = useState("")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add("overflow-hidden")
+    } else {
+      document.body.classList.remove("overflow-hidden")
+    }
+    return () => {
+      document.body.classList.remove("overflow-hidden")
+    }
+  }, [mobileMenuOpen])
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -53,6 +65,15 @@ const VerticalNav = () => {
       >
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
+
+      {/* Mobile overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/40 md:hidden"
+          aria-label="Close navigation overlay"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
 
       {/* Navigation */}
       <div
