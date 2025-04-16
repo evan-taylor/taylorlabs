@@ -87,13 +87,13 @@ const AboutSection: React.FC<AboutSectionProps> = ({ id }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           </motion.div>
           <motion.div
-            className="absolute -bottom-16 sm:-bottom-6 left-0 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg w-[90%] sm:max-w-[260px] mx-auto sm:mx-0 right-0 sm:right-auto"
+            className="absolute -bottom-16 sm:-bottom-6 left-0 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg w-[90%] sm:max-w-[260px] mx-auto sm:mx-0 right-0 sm:right-auto z-10"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.4 }}
           >
-            <p className="text-gray-800 font-medium text-sm sm:text-base">
+            <p className="text-gray-600 font-medium text-sm sm:text-base">
               Based in San Luis Obispo, California. Working with people everywhere!
             </p>
           </motion.div>

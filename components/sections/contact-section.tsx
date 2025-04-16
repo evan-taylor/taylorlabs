@@ -2,10 +2,11 @@
 
 import type React from "react"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, MessageSquare } from "lucide-react"
 import Image from "next/image"
+import { useMagneticButton } from "@/hooks/useMagneticButton"
 
 interface ContactSectionProps {
   id: string
@@ -127,19 +128,82 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
         transition={{ duration: 0.4, delay: 0.3 }}
       >
         <p className="text-lg text-gray-700 mb-6">Looking to support our work?</p>
-        <div className="flex justify-center">
-          <a href="https://www.buymeacoffee.com/evan.taylor" target="_blank" rel="noopener noreferrer">
-            <Image
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png"
-              alt="Buy Me A Coffee"
-              width={217}
-              height={60}
-              className="h-auto max-w-full w-auto"
-            />
-          </a>
-        </div>
+        <MagneticCoffeeButton />
       </motion.div>
     </section>
+  )
+}
+
+// Magnetic Coffee Button component
+const MagneticCoffeeButton = () => {
+  const buttonRef = useRef<HTMLAnchorElement>(null)
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  
+  useEffect(() => {
+    const button = buttonRef.current
+    if (!button) return
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = button.getBoundingClientRect()
+      const centerX = rect.left + rect.width / 2
+      const centerY = rect.top + rect.height / 2
+      
+      const distanceX = e.clientX - centerX
+      const distanceY = e.clientY - centerY
+      
+      const absoluteDistance = Math.sqrt(distanceX * distanceX + distanceY * distanceY)
+      const strength = 15
+      const distance = 100
+      
+      if (absoluteDistance < distance) {
+        const magnetX = (distanceX / distance) * strength
+        const magnetY = (distanceY / distance) * strength
+        
+        setPosition({ x: magnetX, y: magnetY })
+      } else {
+        setPosition({ x: 0, y: 0 })
+      }
+    }
+    
+    const handleMouseLeave = () => {
+      setPosition({ x: 0, y: 0 })
+    }
+    
+    window.addEventListener('mousemove', handleMouseMove)
+    button.addEventListener('mouseleave', handleMouseLeave)
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      if (button) {
+        button.removeEventListener('mouseleave', handleMouseLeave)
+      }
+    }
+  }, [])
+  
+  return (
+    <div className="flex justify-center">
+      <motion.a
+        ref={buttonRef}
+        style={{ 
+          transform: `translate(${position.x}px, ${position.y}px) scale(0.55)`,
+          transition: 'all 0.3s cubic-bezier(0.33, 1, 0.68, 1)'
+        }}
+        href="https://www.buymeacoffee.com/evan.taylor"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative overflow-hidden rounded-md inline-block"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Image
+          src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png"
+          alt="Buy Me A Coffee"
+          width={100}
+          height={30}
+          className="h-auto max-w-full w-auto max-h-10"
+        />
+      </motion.a>
+    </div>
   )
 }
 

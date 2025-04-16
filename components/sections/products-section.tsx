@@ -123,7 +123,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ id }) => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="rounded-full px-3 sm:px-6 border-purple-200 hover:bg-purple-50 text-sm sm:text-base"
+                  className="rounded-full px-3 sm:px-6 border-purple-200 hover:bg-purple-50 hover:text-purple-600 text-sm sm:text-base"
                   onClick={() => window.open("https://buymeacoffee.com/evan.taylor", "_blank")}
                 >
                   Support Project <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
