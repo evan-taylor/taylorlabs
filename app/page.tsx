@@ -19,10 +19,10 @@ export default function Home() {
       <div className="flex">
         <VerticalNav />
 
-        <main className="flex-1 ml-0 lg:ml-64">
+        <main className="flex-1 ml-0 lg:ml-64 overflow-x-hidden">
           <div id="content-container" className="relative">
             <HeroSection id="hero" />
-            <div className="px-6 md:px-12 lg:px-16 max-w-[1600px] mx-auto">
+            <div className="px-4 sm:px-6 md:px-12 lg:px-16 max-w-full sm:max-w-[1600px] mx-auto overflow-x-hidden">
               <AboutSection id="about" />
               <ExpertiseSection id="expertise" />
               <ProductsSection id="products" />

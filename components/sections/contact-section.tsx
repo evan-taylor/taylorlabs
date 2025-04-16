@@ -35,9 +35,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-full">
         <motion.div
-          className="bg-white p-8 rounded-xl shadow-lg border border-gray-100"
+          className="bg-white p-5 sm:p-8 rounded-xl shadow-lg border border-gray-100 overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -47,11 +47,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
             boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-4 sm:mb-6">
             <Mail className="h-6 w-6" aria-hidden="true" />
           </div>
-          <h3 className="text-xl font-semibold mb-3">Email Us</h3>
-          <p className="text-gray-600 mb-4">Send us an email and we'll get back to you as soon as possible.</p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Email Us</h3>
+          <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base break-words">Send us an email and we'll get back to you as soon as possible.</p>
           <a
             href="mailto:hello@taylorlabs.co"
             className="text-purple-600 hover:text-purple-800 font-medium transition-colors"
@@ -61,7 +61,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
         </motion.div>
 
         <motion.div
-          className="bg-white p-8 rounded-xl shadow-lg border border-gray-100"
+          className="bg-white p-5 sm:p-8 rounded-xl shadow-lg border border-gray-100 overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -71,18 +71,18 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
             boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-4 sm:mb-6">
             <Phone className="h-6 w-6" aria-hidden="true" />
           </div>
-          <h3 className="text-xl font-semibold mb-3">Call or Text Us</h3>
-          <p className="text-gray-600 mb-4">Feel free to call or text us anytime. We're happy to chat either way!</p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Call or Text Us</h3>
+          <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base break-words">Feel free to call or text us anytime. We're happy to chat either way!</p>
           <a href="tel:3602071844" className="text-purple-600 hover:text-purple-800 font-medium transition-colors">
             (360) 207-1844
           </a>
         </motion.div>
 
         <motion.div
-          className="bg-white p-8 rounded-xl shadow-lg border border-gray-100"
+          className="bg-white p-5 sm:p-8 rounded-xl shadow-lg border border-gray-100 overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -92,11 +92,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
             boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
           }}
         >
-          <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-4 sm:mb-6">
             <MessageSquare className="h-6 w-6" aria-hidden="true" />
           </div>
-          <h3 className="text-xl font-semibold mb-3">Social Media</h3>
-          <p className="text-gray-600 mb-4">Connect with us on social media for updates and tips.</p>
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Social Media</h3>
+          <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base break-words">Connect with us on social media for updates and tips.</p>
           <div className="flex space-x-3">
             <a
               href="https://twitter.com/evantaylor1104"

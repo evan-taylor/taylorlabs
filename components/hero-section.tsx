@@ -79,9 +79,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
       </div>
 
       <div className="w-full max-w-[100vw] mx-auto px-4 sm:px-6 md:px-12 py-20">
-        <div className="max-w-3xl">
+        <div className="max-w-full sm:max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 break-words">
               Transforming ideas into <span className="text-purple-600">impactful</span> solutions
             </h1>
           </motion.div>
@@ -91,7 +91,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-10 max-w-full sm:max-w-2xl break-words">
               We craft intuitive, high-performance applications with a focus on beautiful design and exceptional
               functionality.
             </p>
@@ -101,11 +101,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-3 sm:gap-4"
           >
             <Button
               size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-8"
+              className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-4 sm:px-8 text-sm sm:text-base"
               onClick={() => {
                 const productsSection = document.getElementById("products")
                 if (productsSection) {
@@ -118,7 +118,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full px-8 border-purple-300 hover:bg-purple-50"
+              className="rounded-full px-4 sm:px-8 border-purple-300 hover:bg-purple-50 text-sm sm:text-base"
               onClick={() => {
                 const contactSection = document.getElementById("contact")
                 if (contactSection) {

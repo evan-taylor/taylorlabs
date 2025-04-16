@@ -37,17 +37,17 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ id }) => {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-purple-600">What We're Good At</h2>
-        <p className="text-lg text-gray-700 mb-12 max-w-3xl">
+        <p className="text-base sm:text-lg text-gray-700 mb-8 sm:mb-12 max-w-full sm:max-w-3xl break-words">
           Our expertise spans the full stack, with a focus on crafting beautiful, high-performance interfaces and robust
           backend systems that scale with your needs.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
         {technologies.map((tech, index) => (
           <motion.div
             key={tech.name}
-            className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:border-purple-200 transition-all"
+            className="bg-white p-3 sm:p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center hover:border-purple-200 transition-all overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -58,13 +58,13 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ id }) => {
             }}
           >
             <motion.div
-              className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-4"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-2 sm:mb-4"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               {tech.icon}
             </motion.div>
-            <span className="font-medium">{tech.name}</span>
+            <span className="font-medium text-sm sm:text-base">{tech.name}</span>
           </motion.div>
         ))}
       </div>
