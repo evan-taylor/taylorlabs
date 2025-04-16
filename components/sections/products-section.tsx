@@ -44,7 +44,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ id }) => {
         whileHover={{ y: -5 }}
       >
         <div className="grid md:grid-cols-2 gap-0">
-          <div className="p-8 md:p-12">
+          <div className="p-4 sm:p-8 md:p-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -108,7 +108,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ id }) => {
                 </motion.div>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-2 sm:gap-4">
                 <Button
                   className="bg-purple-600 hover:bg-purple-700 rounded-full px-6"
                   onClick={() =>

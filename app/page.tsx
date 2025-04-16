@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAFAFA]">
+    <div className="flex flex-col min-h-screen bg-[#FAFAFA] overflow-x-hidden">
       <div className="flex">
         <VerticalNav />
 
-        <main className="flex-1 ml-0 md:ml-64">
+        <main className="flex-1 ml-0 lg:ml-64">
           <div id="content-container" className="relative">
             <HeroSection id="hero" />
             <div className="px-6 md:px-12 lg:px-16 max-w-[1600px] mx-auto">

@@ -4,6 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -91,4 +92,9 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+#content-container {
+  position: relative;
+  z-index: 20;
 }

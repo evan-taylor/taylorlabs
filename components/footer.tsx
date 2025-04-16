@@ -58,7 +58,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-6 border-t border-gray-100 text-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Taylor Labs, LLC. All rights reserved.</p>
-          <p className="mt-2">Mailing Address: 2261 Market Street #86329, San Francisco, CA 94114</p>
+          <p className="mt-2">2261 Market Street #86329, San Francisco, CA 94114</p>
         </div>
       </div>
     </footer>

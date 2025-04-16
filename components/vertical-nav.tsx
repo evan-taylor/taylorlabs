@@ -6,41 +6,57 @@ import { Menu, X, Twitter, Linkedin, Coffee } from "lucide-react"
 import Image from "next/image"
 
 const VerticalNav = () => {
-  const [activeSection, setActiveSection] = useState("")
+  const [activeSection, setActiveSection] = useState("hero")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Prevent background scroll when mobile menu is open
   useEffect(() => {
+    const handleScroll = () => {
+      const sections = Array.from(document.querySelectorAll<HTMLElement>('section[id]'))
+      let current = 'hero'
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect()
+        if (rect.top <= 80) current = section.id
+        else break
+      }
+      setActiveSection(current)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  // Lock body scroll when mobile menu is open and shift content on mobile
+  useEffect(() => {
+    const contentEl = document.getElementById('content-container')
+    const isMobile = window.matchMedia('(max-width: 1023px)').matches
     if (mobileMenuOpen) {
-      document.body.classList.add("overflow-hidden")
+      document.body.style.overflow = 'hidden'
+      if (isMobile && contentEl) {
+        contentEl.style.transform = 'translateX(min(16rem, 70vw))'
+        contentEl.style.transition = 'transform 0.3s ease-in-out'
+      }
     } else {
-      document.body.classList.remove("overflow-hidden")
+      document.body.style.overflow = ''
+      if (contentEl) {
+        contentEl.style.transform = ''
+        contentEl.style.transition = ''
+      }
     }
     return () => {
-      document.body.classList.remove("overflow-hidden")
+      document.body.style.overflow = ''
+      if (contentEl) {
+        contentEl.style.transform = ''
+        contentEl.style.transition = ''
+      }
     }
   }, [mobileMenuOpen])
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      { threshold: 0.3, rootMargin: "-10% 0px -90% 0px" },
-    )
-
-    document.querySelectorAll("section[id]").forEach((section) => {
-      observer.observe(section)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
   const scrollToSection = (id: string) => {
+    // Immediately highlight clicked section
+    setActiveSection(id)
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -60,27 +76,18 @@ const VerticalNav = () => {
     <>
       {/* Mobile menu button */}
       <button
-        className="fixed top-6 right-6 z-50 md:hidden bg-white rounded-full p-2 shadow-md"
+        className="fixed top-6 right-6 z-50 lg:hidden bg-white rounded-full p-2 shadow-md"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile overlay */}
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-30 bg-black/40 md:hidden"
-          aria-label="Close navigation overlay"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
-
       {/* Navigation */}
       <div
         className={cn(
-          "fixed top-0 left-0 h-full z-40 md:w-64 md:block",
+          "fixed top-0 left-0 h-full z-40 w-[min(16rem,70vw)] lg:w-64 lg:block",
           "transform transition-transform duration-300 ease-in-out",
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0",
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
         )}
       >
         <div className="flex flex-col h-full py-12 px-8">
@@ -105,7 +112,7 @@ const VerticalNav = () => {
                   <button
                     onClick={() => scrollToSection(section.id)}
                     className={cn(
-                      "text-sm transition-colors pl-2 border-l-2",
+                      "text-sm transition-colors pl-4 border-l-4 border-solid",
                       activeSection === section.id
                         ? "text-purple-600 border-purple-600 font-medium"
                         : "text-gray-500 hover:text-purple-600 border-transparent",

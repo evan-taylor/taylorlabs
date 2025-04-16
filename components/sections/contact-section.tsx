@@ -134,7 +134,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
               alt="Buy Me A Coffee"
               width={217}
               height={60}
-              className="h-[60px] w-[217px]"
+              className="h-auto max-w-full w-auto"
             />
           </a>
         </div>

@@ -78,7 +78,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
         />
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 py-20">
+      <div className="w-full max-w-[100vw] mx-auto px-4 sm:px-6 md:px-12 py-20">
         <div className="max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
