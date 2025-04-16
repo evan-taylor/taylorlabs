@@ -142,7 +142,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ id }) => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-80 h-80 rounded-full bg-gradient-to-r from-[#4A90E2]/10 to-[#67B8E3]/10"></div>
             </div>
-            <div className="relative w-64 h-64 z-10">
+            <div className="relative w-52 h-52 sm:w-64 sm:h-64 z-10">
               <Image
                 src="/soundsnooze-logo.png"
                 alt="SoundSnooze App - A Mac application that automatically mutes your computer when you step away"
@@ -154,21 +154,21 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ id }) => {
 
             {/* Fun floating UI elements */}
             <motion.div
-              className="absolute top-10 right-10 bg-white p-3 rounded-lg shadow-lg"
+              className="absolute top-5 right-3 sm:top-10 sm:right-10 bg-white p-2 sm:p-3 rounded-lg shadow-lg z-20"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Number.POSITIVE_INFINITY, duration: 3, ease: "easeInOut" }}
               aria-hidden="true"
             >
-              <Volume2 className="h-6 w-6 text-purple-600" />
+              <Volume2 className="h-4 w-4 sm:h-6 sm:w-6 text-purple-600" />
             </motion.div>
 
             <motion.div
-              className="absolute bottom-10 left-10 bg-white p-3 rounded-lg shadow-lg"
+              className="absolute bottom-5 left-3 sm:bottom-10 sm:left-10 bg-white p-2 sm:p-3 rounded-lg shadow-lg z-20"
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Number.POSITIVE_INFINITY, duration: 4, ease: "easeInOut", delay: 1 }}
               aria-hidden="true"
             >
-              <Headphones className="h-6 w-6 text-purple-600" />
+              <Headphones className="h-4 w-4 sm:h-6 sm:w-6 text-purple-600" />
             </motion.div>
           </motion.div>
         </div>

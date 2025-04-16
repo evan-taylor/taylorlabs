@@ -87,7 +87,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ id }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           </motion.div>
           <motion.div
-            className="absolute -bottom-6 left-0 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg w-[calc(100%-1rem)] sm:max-w-[260px]"
+            className="absolute -bottom-16 sm:-bottom-6 left-0 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg w-[90%] sm:max-w-[260px] mx-auto sm:mx-0 right-0 sm:right-auto"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
