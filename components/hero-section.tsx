@@ -123,7 +123,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 sm:mb-10 max-w-full sm:max-w-2xl break-words">
-              We craft intuitive, high-performance applications with a focus on 
+              We craft intuitive, high-performance solutions with a focus on 
               <span className="relative inline-block mx-1">
                 beautiful
                 <motion.svg
