@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { Menu, X, Twitter, Linkedin, Coffee } from "lucide-react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const VerticalNav = () => {
   const [activeSection, setActiveSection] = useState("hero")
@@ -72,6 +73,21 @@ const VerticalNav = () => {
     { id: "contact", title: "Contact" },
   ]
 
+  // Animation variants for the smooth bounce effect
+  const buttonVariants = {
+    initial: { scale: 1 },
+    hover: { 
+      scale: 1.05,
+      transition: { 
+        type: "spring", 
+        stiffness: 400, 
+        damping: 10,
+        mass: 0.8
+      }
+    },
+    tap: { scale: 0.98 }
+  }
+
   return (
     <>
       {/* Mobile menu button */}
@@ -95,7 +111,7 @@ const VerticalNav = () => {
           <div className="mb-12">
             <div className="flex items-center">
               <div className="relative w-12 h-12 mr-3">
-                <Image src="/taylor-labs-logo.png" alt="Taylor Labs Logo" fill className="object-contain" />
+                <Image src="/taylor-labs-logo.png" alt="Taylor Labs Logo" fill className="object-contain" priority />
               </div>
               <div>
                 <h1 className="text-xl font-semibold">Taylor Labs</h1>
@@ -104,22 +120,26 @@ const VerticalNav = () => {
             </div>
           </div>
 
-          {/* Nav Links - Using the original style approach */}
+          {/* Nav Links - Using motion for the smooth bounce effect */}
           <nav className="sticky self-start">
             <ul className="space-y-4">
               {sections.map((section) => (
                 <li key={section.id}>
-                  <button
+                  <motion.button
                     onClick={() => scrollToSection(section.id)}
                     className={cn(
-                      "text-sm transition-colors pl-4 border-l-4 border-solid",
+                      "text-sm transition-colors pl-4 border-l-4 border-solid w-full text-left",
                       activeSection === section.id
                         ? "text-purple-600 border-purple-600 font-medium"
                         : "text-gray-500 hover:text-purple-600 border-transparent",
                     )}
+                    variants={buttonVariants}
+                    initial="initial"
+                    whileHover="hover"
+                    whileTap="tap"
                   >
                     {section.title}
-                  </button>
+                  </motion.button>
                 </li>
               ))}
             </ul>
@@ -131,33 +151,45 @@ const VerticalNav = () => {
               <p className="mb-1">hello@taylorlabs.co</p>
               <p className="mb-3">San Luis Obispo, CA</p>
               <div className="flex space-x-2">
-                <a
+                <motion.a
                   href="https://twitter.com/evantaylor1104"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-100 hover:text-purple-600 transition-colors"
                   aria-label="Twitter"
+                  variants={buttonVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <Twitter size={14} />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="https://www.linkedin.com/in/evan-l-taylor/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-100 hover:text-purple-600 transition-colors"
                   aria-label="LinkedIn"
+                  variants={buttonVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <Linkedin size={14} />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="https://buymeacoffee.com/evan.taylor"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center hover:bg-purple-100 hover:text-purple-600 transition-colors"
                   aria-label="Buy Me A Coffee"
+                  variants={buttonVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  whileTap="tap"
                 >
                   <Coffee size={14} />
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>
