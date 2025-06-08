@@ -1,9 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Taylor Labs | Innovative Software Solutions",
@@ -54,6 +51,13 @@ export const metadata: Metadata = {
     generator: 'v0.dev'
 }
 
+/**
+ * Root layout component that defines the HTML structure and global metadata for the application.
+ *
+ * Renders the main HTML scaffold with language set to English, injects organization structured data via JSON-LD, and applies a monospace font to the body. All page content is rendered within the body via the {@link children} prop.
+ *
+ * @param children - The React node(s) to be rendered within the layout.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -94,10 +98,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className="font-mono">{children}</body>
     </html>
   )
 }
-
-
-import './globals.css'
