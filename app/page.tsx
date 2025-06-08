@@ -6,6 +6,11 @@ export const metadata: Metadata = {
     "Taylor Labs creates intuitive, high-performance applications with a focus on beautiful design and exceptional functionality.",
 }
 
+/**
+ * Renders the Taylor Labs homepage with company information, product highlights, contact options, and a footer.
+ *
+ * The page includes sections for the company backstory, featured product (SoundSnooze), and multiple ways to get in touch, all styled with a dark theme.
+ */
 export default function Home() {
 
   return (
