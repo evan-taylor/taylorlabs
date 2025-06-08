@@ -1,12 +1,13 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Taylor Labs",
+  title: "Taylor Labs | Home",
   description:
     "Taylor Labs creates intuitive, high-performance applications with a focus on beautiful design and exceptional functionality.",
 }
 
 export default function Home() {
+
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="max-w-4xl mx-auto px-8 py-16">
@@ -98,7 +99,7 @@ export default function Home() {
                 Send us an email and we'll get back to you as soon as possible.
               </p>
               <a href="mailto:hello@taylorlabs.co" className="text-gray-300 hover:text-white transition-colors">
-                hello@taylorlabs.co
+                hello[at]taylorlabs[dot]co
               </a>
             </div>
             
