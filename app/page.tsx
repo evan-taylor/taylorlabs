@@ -76,6 +76,8 @@ export default function Home() {
               </p>
               <a 
                 href="https://github.com/evan-taylor/SoundSnooze/releases/latest/download/SoundSnooze.dmg" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 transition-colors underline"
               >
                 Download for Mac →
