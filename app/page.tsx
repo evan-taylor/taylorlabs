@@ -6,11 +6,6 @@ export const metadata: Metadata = {
     "Taylor Labs creates intuitive, high-performance applications with a focus on beautiful design and exceptional functionality.",
 }
 
-/**
- * Renders the Taylor Labs homepage with company information, product highlights, contact options, and a footer.
- *
- * The page includes sections for the company backstory, featured product (SoundSnooze), and multiple ways to get in touch, all styled with a dark theme.
- */
 export default function Home() {
 
   return (
@@ -20,8 +15,8 @@ export default function Home() {
         <header className="mb-16">
           <h1 className="text-4xl font-bold mb-4">Taylor Labs</h1>
           <p className="text-lg text-gray-300">
-            Transforming ideas into impactful solutions. We craft intuitive, 
-            high-performance applications with a focus on beautiful design and 
+            Transforming ideas into impactful solutions. We craft intuitive,
+            high-performance applications with a focus on beautiful design and
             exceptional functionality.
           </p>
         </header>
@@ -31,13 +26,13 @@ export default function Home() {
           <h2 className="text-2xl font-bold mb-6">The Backstory</h2>
           <div className="space-y-4 text-gray-300">
             <p>
-              Taylor Labs was founded by Evan Taylor, a Computer Science student at 
-              California Polytechnic State University (Cal Poly) with a passion for 
+              Taylor Labs was founded by Evan Taylor, a Computer Science student at
+              California Polytechnic State University (Cal Poly) with a passion for
               building innovative software solutions.
             </p>
             <p>
-              Our mission is to create applications that solve real-world problems while 
-              maintaining a focus on beautiful design and exceptional functionality. We 
+              Our mission is to create applications that solve real-world problems while
+              maintaining a focus on beautiful design and exceptional functionality. We
               believe that great software should be both powerful and a joy to use.
             </p>
           </div>
@@ -47,10 +42,10 @@ export default function Home() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-6">What We're Good At</h2>
           <p className="text-gray-300 mb-8">
-            Our expertise spans the full stack, with a focus on crafting beautiful, 
+            Our expertise spans the full stack, with a focus on crafting beautiful,
             high-performance interfaces and robust backend systems that scale with your needs.
           </p>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-gray-300">
             <div>React</div>
             <div>Next.js</div>
@@ -68,19 +63,19 @@ export default function Home() {
         </section> */}
 
         {/* Our Products */}
-        <section className="mb-16">
+        {/*<section className="mb-16">
           <h2 className="text-2xl font-bold mb-6">What We've Built</h2>
-          
+
                      <div className="space-y-8">
             <div>
               <h3 className="text-lg font-semibold mb-2">SoundSnooze</h3>
               <p className="text-gray-300 mb-2">Never worry about accidental sound leaks again.</p>
               <p className="text-gray-400 text-sm mb-4">
-                SoundSnooze automatically mutes your Mac when you lock your screen, or close your laptop, preventing embarrassing 
+                SoundSnooze automatically mutes your Mac when you lock your screen, or close your laptop, preventing embarrassing
                 audio situations. It's the perfect companion for anyone who values peace of mind.
               </p>
-              <a 
-                href="https://github.com/evan-taylor/SoundSnooze/releases/latest/download/SoundSnooze.dmg" 
+              <a
+                href="https://github.com/evan-taylor/SoundSnooze/releases/latest/download/SoundSnooze.dmg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 transition-colors underline"
@@ -88,17 +83,17 @@ export default function Home() {
                 Download for Mac →
               </a>
             </div>
-          </div>
+          </div>*/}
         </section>
 
         {/* Get In Touch */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
           <p className="text-gray-300 mb-8">
-            Have questions or want to collaborate? We'd love to hear from you! Reach out and 
+            Have questions or want to collaborate? We'd love to hear from you! Reach out and
             let's discuss how we can work together.
           </p>
-          
+
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2 text-white">Email Us</h3>
@@ -109,7 +104,7 @@ export default function Home() {
                 hello[at]taylorlabs[dot]co
               </a>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold mb-2 text-white">Call or Text Us</h3>
               <p className="text-gray-400 text-sm mb-2">
@@ -119,14 +114,14 @@ export default function Home() {
                 (360) 207-1844
               </a>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold mb-2 text-white">Location</h3>
               <p className="text-gray-300">
                 Based in San Luis Obispo, California. Working with people everywhere!
               </p>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold mb-2 text-white">Support Our Work</h3>
               <p className="text-gray-400 text-sm mb-4">
@@ -154,4 +149,3 @@ export default function Home() {
     </div>
   )
 }
-
