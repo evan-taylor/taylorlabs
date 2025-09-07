@@ -2,11 +2,11 @@ let userConfig;
 try {
   // try to import ESM first
   userConfig = await import("./v0-user-next.config.mjs");
-} catch (e) {
+} catch (_e) {
   try {
     // fallback to CJS import
     userConfig = await import("./v0-user-next.config");
-  } catch (innerError) {
+  } catch (_innerError) {
     // ignore error
   }
 }
