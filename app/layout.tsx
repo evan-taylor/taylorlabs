@@ -1,12 +1,13 @@
-import type React from "react"
-import type { Metadata } from "next"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Taylor Labs | Innovative Software Solutions",
   description:
     "Taylor Labs creates intuitive, high-performance applications with a focus on beautiful design and exceptional functionality.",
-  keywords: "software development, app development, Mac apps, iOS apps, Taylor Labs, Evan Taylor, SoundSnooze",
+  keywords:
+    "software development, app development, Mac apps, iOS apps, Taylor Labs, Evan Taylor, SoundSnooze",
   authors: [{ name: "Evan Taylor" }],
   creator: "Evan Taylor",
   publisher: "Taylor Labs",
@@ -48,8 +49,8 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+};
 
 /**
  * Root layout component that defines the HTML structure and global metadata for the application.
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -100,5 +101,5 @@ export default function RootLayout({
       </head>
       <body className="font-mono">{children}</body>
     </html>
-  )
+  );
 }

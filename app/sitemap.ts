@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 /**
  * Generates a sitemap entry for the website with the current timestamp.
@@ -8,10 +8,10 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://taylorlabs.co',
+      url: "https://taylorlabs.co",
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 1,
     },
-  ]
-} 
+  ];
+}

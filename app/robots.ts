@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 /**
  * Generates robots.txt metadata allowing all user agents full access and specifying the sitemap URL.
@@ -9,10 +9,10 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: '*',
-        allow: '/',
+        userAgent: "*",
+        allow: "/",
       },
     ],
-    sitemap: 'https://taylorlabs.co/sitemap.xml',
-  }
+    sitemap: "https://taylorlabs.co/sitemap.xml",
+  };
 }
