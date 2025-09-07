@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="max-w-4xl mx-auto px-8 py-16">
+      <div className="mx-auto max-w-4xl px-8 py-16">
         {/* Header */}
         <header className="mb-16">
-          <h1 className="text-4xl font-bold mb-4">Taylor Labs</h1>
-          <p className="text-lg text-gray-300">
+          <h1 className="mb-4 font-bold text-4xl">Taylor Labs</h1>
+          <p className="text-gray-300 text-lg">
             Bringing ideas to life through thoughtful design and code. We create
             websites and digital solutions for startups, businesses, and people.
           </p>
@@ -26,7 +26,7 @@ export default function Home() {
 
         {/* About / The Backstory */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">The Backstory</h2>
+          <h2 className="mb-6 font-bold text-2xl">The Backstory</h2>
           <div className="space-y-4 text-gray-300">
             <p>
               Taylor Labs was founded by Evan Taylor, a Computer Science student
@@ -68,46 +68,46 @@ export default function Home() {
 
         {/* Get In Touch */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
-          <p className="text-gray-300 mb-8">
+          <h2 className="mb-6 font-bold text-2xl">Get In Touch</h2>
+          <p className="mb-8 text-gray-300">
             Have questions or want to collaborate? We'd love to hear from you!
             Reach out and let's discuss how we can work together.
           </p>
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-2 text-white">
+              <h3 className="mb-2 font-semibold text-lg text-white">
                 Email Us
               </h3>
-              <p className="text-gray-400 text-sm mb-2">
+              <p className="mb-2 text-gray-400 text-sm">
                 Send us an email and we'll get back to you as soon as possible.
               </p>
               <a
+                className="text-gray-300 transition-colors hover:text-white"
                 href="mailto:hello@taylorlabs.co"
-                className="text-gray-300 hover:text-white transition-colors"
               >
                 hello[at]taylorlabs[dot]co
               </a>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-2 text-white">
+              <h3 className="mb-2 font-semibold text-lg text-white">
                 Call or Text Us
               </h3>
-              <p className="text-gray-400 text-sm mb-2">
+              <p className="mb-2 text-gray-400 text-sm">
                 Feel free to call or text us anytime. We're happy to chat either
                 way!
               </p>
               <a
+                className="text-gray-300 transition-colors hover:text-white"
                 href="tel:+13602071844"
-                className="text-gray-300 hover:text-white transition-colors"
               >
                 (360) 207-1844
               </a>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-2 text-white">
+              <h3 className="mb-2 font-semibold text-lg text-white">
                 Location
               </h3>
               <p className="text-gray-300">
@@ -119,8 +119,8 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-gray-800">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-2 sm:space-y-0">
+        <footer className="mt-16 border-gray-800 border-t pt-8">
+          <div className="flex flex-col space-y-2 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
             <p className="text-gray-500 text-sm">© 2024 Taylor Labs.</p>
             <p className="text-gray-500 text-sm">
               2261 Market Street #86329, San Francisco, CA 94114

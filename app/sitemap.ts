@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 /**
  * Generates a sitemap entry for the website with the current timestamp.

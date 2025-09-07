@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 /**
  * Generates robots.txt metadata allowing all user agents full access and specifying the sitemap URL.

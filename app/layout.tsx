@@ -1,5 +1,5 @@
-import type React from "react";
 import type { Metadata } from "next";
+import type React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -68,7 +68,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -97,6 +96,7 @@ export default function RootLayout({
               },
             }),
           }}
+          type="application/ld+json"
         />
       </head>
       <body className="font-mono">{children}</body>
