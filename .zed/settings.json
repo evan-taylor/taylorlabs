@@ -61,9 +61,7 @@
       }
     }
   },
-  "language_servers": [
-    "biome"
-  ],
+  "language_servers": ["biome"],
   "lsp": {
     "biome": {
       "initialization_options": {
