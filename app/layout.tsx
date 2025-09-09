@@ -98,6 +98,7 @@ export default function RootLayout({
           }}
           type="application/ld+json"
         />
+        <script defer src="https://assets.onedollarstats.com/stonks.js" />
       </head>
       <body className="font-mono">{children}</body>
     </html>
