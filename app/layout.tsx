@@ -99,6 +99,10 @@ export default function RootLayout({
           type="application/ld+json"
         />
         <script defer src="https://assets.onedollarstats.com/stonks.js" />
+        <script
+          data-token="dda4b87e-22eb-48e3-9206-63d71b804e28"
+          src="https://cdn.visitors.now/v.js"
+        />
       </head>
       <body className="font-mono">{children}</body>
     </html>
