@@ -1,0 +1,37 @@
+tailwind.config.js
+  a5b337a05b427b9f 85
+biome.jsonc
+  a5b337a05b427b9f 2-38
+styles/globals.css
+  a5b337a05b427b9f 1,5,123,126
+package.json
+  a5b337a05b427b9f 4,13-16,19-48,51,53-66,68-69,72-81
+postcss.config.mjs
+  a5b337a05b427b9f 4
+app/layout.tsx
+  a5b337a05b427b9f 3,13,41,43,80-81,83,85,97,106-107,109,111-115,117,119,122-125
+app/globals.css
+  a5b337a05b427b9f 1,134,137-139,148-232,242,264-265,278,291,321
+app/page.tsx
+  a5b337a05b427b9f 4,6,9-27,30-38,40-43,45-46,48-63,68-91,93,97-119,123-125,127-129,132
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.7",
+  "base_commit_sha": "28f52d1dc91be1a96e9cf88064613c30950cdde4",
+  "prompts": {
+    "a5b337a05b427b9f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "ac24ba6c-54ca-4f18-a5a8-cff38bd5696e",
+        "model": "gpt-5.3-codex-high"
+      },
+      "human_author": "Evan Taylor <eltaylor1104@gmail.com>",
+      "messages": [],
+      "total_additions": 957,
+      "total_deletions": 955,
+      "accepted_lines": 345,
+      "overriden_lines": 0
+    }
+  }
+}
