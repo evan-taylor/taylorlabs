@@ -1,4 +1,40 @@
 {
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite"]
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/next"
+  ],
+  "overrides": [
+    {
+      "includes": ["components/ui/**", "hooks/**"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useAriaPropsForRole": "off",
+            "useFocusableInteractive": "off",
+            "useSemanticElements": "off"
+          },
+          "complexity": {
+            "noForEach": "off"
+          },
+          "correctness": {
+            "noNestedComponentDefinitions": "off",
+            "noUnusedFunctionParameters": "off"
+          },
+          "performance": {
+            "noNamespaceImport": "off"
+          },
+          "security": {
+            "noDangerouslySetInnerHtml": "off"
+          },
+          "style": {
+            "useDefaultSwitchClause": "off"
+          },
+          "suspicious": {
+            "noDocumentCookie": "off"
+          }
+        }
+      }
+    }
+  ]
 }

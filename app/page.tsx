@@ -1,133 +1,134 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Taylor Labs | Home",
+  title: "Taylor Labs",
   description:
-    "Taylor Labs brings ideas to life through thoughtful design and code. We create websites and digital solutions for startups, businesses, and people.",
+    "Taylor Labs builds websites and software for startups and small businesses.",
 };
 
-/**
- * Renders the Taylor Labs homepage with company information, product highlights, contact options, and a footer.
- *
- * The page includes sections for the company backstory, featured product (SoundSnooze), and multiple ways to get in touch, all styled with a dark theme.
- */
+const services = [
+  {
+    title: "Websites",
+    items: [
+      { primary: "Landing pages", secondary: "marketing sites" },
+      { primary: "Company sites", secondary: "brand refreshes" },
+      { primary: "Content updates", secondary: "ongoing support" },
+    ],
+  },
+  {
+    title: "Product Development",
+    items: [
+      { primary: "Web apps", secondary: "internal tools" },
+      { primary: "MVP builds", secondary: "new ideas" },
+      { primary: "Integrations", secondary: "APIs and automation" },
+    ],
+  },
+] as const;
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-4xl px-8 py-16">
-        {/* Header */}
-        <header className="mb-16">
-          <h1 className="mb-4 font-bold text-4xl">Taylor Labs</h1>
-          <p className="text-gray-300 text-lg">
-            Bringing ideas to life through thoughtful design and code. We create
-            websites and digital solutions for startups, businesses, and people.
+    <main className="relative isolate min-h-screen overflow-x-hidden bg-zinc-950">
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(70rem_35rem_at_8%_-8%,rgba(16,185,129,0.12),transparent_62%),radial-gradient(60rem_36rem_at_92%_10%,rgba(39,39,42,0.34),transparent_60%)]" />
+        <div className="tl-grain absolute inset-0 opacity-40" />
+      </div>
+
+      <div className="mx-auto max-w-3xl px-6 py-14 md:py-20">
+        <header className="tl-reveal" style={{ animationDelay: "20ms" }}>
+          <h1 className="font-semibold text-4xl text-white tracking-tight md:text-5xl">
+            Taylor Labs
+          </h1>
+          <p className="mt-4 text-zinc-300">
+            We design and build websites and software for startups and small
+            businesses.
+          </p>
+          <p className="mt-8 max-w-2xl text-lg text-zinc-100 leading-relaxed">
+            Simple process, direct communication, and steady progress.
+          </p>
+          <p className="mt-6 flex flex-wrap items-center gap-2 text-zinc-300">
+            Contact{" "}
+            <a
+              className="tl-link inline-flex min-h-11 items-center"
+              href="mailto:hello@taylorlabs.co"
+            >
+              hello@taylorlabs.co
+            </a>{" "}
+            or{" "}
+            <a
+              className="tl-link inline-flex min-h-11 items-center"
+              href="tel:+13602071844"
+            >
+              (360) 207-1844
+            </a>
+            .
           </p>
         </header>
 
-        {/* About / The Backstory */}
-        <section className="mb-16">
-          <h2 className="mb-6 font-bold text-2xl">The Backstory</h2>
-          <div className="space-y-4 text-gray-300">
-            <p>
-              Taylor Labs was founded by Evan Taylor, a Computer Science student
-              at California Polytechnic State University (Cal Poly) with a
-              passion for building innovative software solutions.
-            </p>
-            <p>
-              Currently, we design and build websites, and provide software
-              development services. Our approach combines clean design with
-              solid engineering to create digital experiences that work well for
-              both users and businesses.
-            </p>
+        <section
+          className="tl-reveal mt-16 border-zinc-800 border-t pt-10"
+          style={{ animationDelay: "90ms" }}
+        >
+          <h2 className="font-medium text-xs text-zinc-400 uppercase tracking-[0.14em]">
+            Services
+          </h2>
+          <div className="mt-5 space-y-8">
+            {services.map((service) => (
+              <article key={service.title}>
+                <h3 className="font-semibold text-lg text-white">
+                  {service.title}
+                </h3>
+                <ul className="mt-3 space-y-1 text-sm">
+                  {service.items.map((item) => (
+                    <li key={item.primary}>
+                      <span className="tl-service-row inline-flex items-baseline gap-2 text-zinc-200">
+                        <span>{item.primary}</span>
+                        <span className="tl-service-meta text-zinc-500">
+                          — {item.secondary}
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </section>
 
-        {/* What We're Good At
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">What We're Good At</h2>
-          <p className="text-gray-300 mb-8">
-            Our expertise spans the full stack, with a focus on crafting beautiful,
-            high-performance interfaces and robust backend systems that scale with your needs.
+        <section
+          className="tl-reveal mt-16 border-zinc-800 border-t pt-10"
+          style={{ animationDelay: "140ms" }}
+        >
+          <h2 className="font-medium text-xs text-zinc-400 uppercase tracking-[0.14em]">
+            Contact
+          </h2>
+          <p className="mt-4 flex flex-wrap items-center gap-3 text-zinc-300">
+            <a
+              className="tl-link inline-flex min-h-11 items-center"
+              href="mailto:hello@taylorlabs.co"
+            >
+              hello@taylorlabs.co
+            </a>{" "}
+            <span aria-hidden className="text-zinc-600">
+              ·
+            </span>
+            <a
+              className="tl-link inline-flex min-h-11 items-center"
+              href="tel:+13602071844"
+            >
+              (360) 207-1844
+            </a>
           </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-gray-300">
-            <div>React</div>
-            <div>Next.js</div>
-            <div>Svelte</div>
-            <div>Supabase</div>
-            <div>PostgreSQL</div>
-            <div>TypeScript</div>
-            <div>Python</div>
-            <div>Java</div>
-            <div>Node.js</div>
-            <div>Git</div>
-            <div>Figma</div>
-            <div>DevOps</div>
-          </div>
-        </section> */}
-
-        {/* Get In Touch */}
-        <section className="mb-16">
-          <h2 className="mb-6 font-bold text-2xl">Get In Touch</h2>
-          <p className="mb-8 text-gray-300">
-            Have questions or want to collaborate? We'd love to hear from you!
-            Reach out and let's discuss how we can work together.
-          </p>
-
-          <div className="space-y-6">
-            <div>
-              <h3 className="mb-2 font-semibold text-lg text-white">
-                Email Us
-              </h3>
-              <p className="mb-2 text-gray-400 text-sm">
-                Send us an email and we'll get back to you as soon as possible.
-              </p>
-              <a
-                className="text-gray-300 transition-colors hover:text-white"
-                href="mailto:hello@taylorlabs.co"
-              >
-                hello[at]taylorlabs[dot]co
-              </a>
-            </div>
-
-            <div>
-              <h3 className="mb-2 font-semibold text-lg text-white">
-                Call or Text Us
-              </h3>
-              <p className="mb-2 text-gray-400 text-sm">
-                Feel free to call or text us anytime. We're happy to chat either
-                way!
-              </p>
-              <a
-                className="text-gray-300 transition-colors hover:text-white"
-                href="tel:+13602071844"
-              >
-                (360) 207-1844
-              </a>
-            </div>
-
-            <div>
-              <h3 className="mb-2 font-semibold text-lg text-white">
-                Location
-              </h3>
-              <p className="text-gray-300">
-                Based in San Luis Obispo, California. Working with people
-                everywhere!
-              </p>
-            </div>
-          </div>
         </section>
 
-        {/* Footer */}
-        <footer className="mt-16 border-gray-800 border-t pt-8">
-          <div className="flex flex-col space-y-2 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
-            <p className="text-gray-500 text-sm">© 2024 Taylor Labs.</p>
-            <p className="text-gray-500 text-sm">
-              2261 Market Street #86329, San Francisco, CA 94114
-            </p>
-          </div>
+        <footer
+          className="tl-reveal mt-16 border-zinc-800 border-t pt-10 text-sm text-zinc-500"
+          style={{ animationDelay: "180ms" }}
+        >
+          <p>2261 Market Street STE 86329</p>
+          <p className="mt-1">San Francisco, CA 94114</p>
+          <p className="mt-2">© 2026 Taylor Labs. All rights reserved.</p>
         </footer>
       </div>
-    </div>
+    </main>
   );
 }
