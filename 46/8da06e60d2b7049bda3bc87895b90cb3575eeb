@@ -1,0 +1,76 @@
+public/wordmark.svg
+  s_2a5498faea157a::t_47e8fefe11feaa 1
+components/shaders/footer-wordmark.tsx
+  s_2a5498faea157a::t_ba1b436b95ec7f 29
+  s_2a5498faea157a::t_df42d13246db1a 1-2,4-5,17,21-27,30,46-48
+  s_2a5498faea157a::t_71188683046a03 3,6-16,18-20,28,31-45
+app/layout.tsx
+  s_2a5498faea157a::t_109fb63c898ac1 1-2
+  s_2a5498faea157a::t_a563f0ce70062d 4,9,11
+  s_2a5498faea157a::t_39c3b73a55beaa 111-114
+package.json
+  s_2a5498faea157a::t_0360f3dae8c390 21
+  s_2a5498faea157a::t_3880bfba5683b5 56
+app/page.tsx
+  s_2a5498faea157a::t_2ad585fb6a93b7 115
+  s_2a5498faea157a::t_18d9229d5fe4f6 397-401
+  s_2a5498faea157a::t_ddcff54aed529a 36-57,61-62,78-114,116-124,126-144,213,234,236,245,247,298,300-301,303-305,307-316,319-322,324-337,342-345,354,363-390
+  s_2a5498faea157a::t_fe83b1e519a23c 74,186,192-193,206,210-211,271,284
+  s_2a5498faea157a::t_67f9d80c24c285 63,72-73,75-77,145,184,191,194-198,200-201,204-205,207-209,212,214,217-219,222-226,229-230,258,263-268,270,272-273,275-279,281,287-288,293,346,351,353,356,358-362,396,402-403
+  s_2a5498faea157a::t_56421aabe16269 190
+  s_2a5498faea157a::t_eedd5d5407b5fa 233,237-241,244,248-252
+  s_2a5498faea157a::t_acc850b275a1e0 1,3
+  s_2a5498faea157a::t_4fc3d25c6cad11 260-261
+  s_2a5498faea157a::t_ec2b654c8fef9d 4-5,13-16,64-65,68-71,149,153-154,156-159,179-183,185,187-189,202-203,215,220-221,227-228,231,254-256,269,280,283,347-348,352,357,391-395,404-411,415-417
+  s_2a5498faea157a::t_4326bd056b607f 58-60
+  s_2a5498faea157a::t_e4646caab8d024 355
+  s_2a5498faea157a::t_895720e9304512 150-152,160-171,173-174,176,178
+  s_2a5498faea157a::t_2cc956bb0a3b04 216
+  s_2a5498faea157a::t_565dab7124308d 274
+  s_13cbe490bb7e21::t_2c929aa4c6a395 147
+  s_2a5498faea157a::t_ddd1cd44f64d63 67,155,232,235,242-243,246,253,282,285-286,341,412-414
+  s_2a5498faea157a::t_a79599e383e79b 66
+components/shaders/logo-mark.tsx
+  s_2a5498faea157a::t_4207954613c6cf 1-40,42-44,46-49
+  s_2a5498faea157a::t_6c44d793cbd714 41
+app/globals.css
+  s_2a5498faea157a::t_2957cea1ad1451 6
+  s_2a5498faea157a::t_e2e1ff12ec261f 408-409
+  s_2a5498faea157a::t_b5487208fca3e0 149-153
+  s_2a5498faea157a::t_5086c73072c6b9 3-5,7-8
+  s_2a5498faea157a::t_9683f1a269a18d 354,356,360,365,370-371,376
+  s_2a5498faea157a::t_b10414313b1fd5 359,361-364,366-369,372-375,377-407,411-420
+  s_2a5498faea157a::t_5d9433115bfeb4 143
+public/logo-mark.svg
+  s_2a5498faea157a::t_a548325d0a6c70 1
+hooks/use-reduced-motion.tsx
+  s_2a5498faea157a::t_b2f68220b64cc6 1-23
+components/shaders/hero-backdrop.tsx
+  s_2a5498faea157a::t_bc912ec5731d88 18
+  s_2a5498faea157a::t_59118fc586327d 19-21
+  s_2a5498faea157a::t_941db10e2d9e37 1-17,22-27,29-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "468da06e60d2b7049bda3bc87895b90cb3575eeb",
+  "prompts": {},
+  "sessions": {
+    "s_13cbe490bb7e21": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e6ccd-3448-7910-bf9f-c78209c37bf5",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Evan Taylor <eltaylor1104@gmail.com>"
+    },
+    "s_2a5498faea157a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ec32f595-e44b-4a76-ad9c-dc5a38706f18",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Evan Taylor <eltaylor1104@gmail.com>"
+    }
+  }
+}
