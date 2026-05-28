@@ -1,12 +1,14 @@
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import { Roboto_Flex } from "next/font/google";
+import { Sora } from "next/font/google";
 import Script from "next/script";
 import type React from "react";
 import "./globals.css";
 
-const robotoFlex = Roboto_Flex({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-roboto-flex",
+  variable: "--font-sora",
   display: "swap",
 });
 
@@ -106,7 +108,10 @@ export default function RootLayout({
   const isProduction = process.env.NODE_ENV === "production";
 
   return (
-    <html className={robotoFlex.variable} lang="en">
+    <html
+      className={`${GeistSans.variable} ${GeistMono.variable} ${sora.variable}`}
+      lang="en"
+    >
       <head>
         <meta content="Taylor Labs" name="apple-mobile-web-app-title" />
         <script type="application/ld+json">{organizationJsonLd}</script>
